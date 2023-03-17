@@ -16,12 +16,6 @@ func Play() {
 
 	f, err := os.Open(m)
 
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// streamer— это то, что мы можем использовать, чтобы сыграть песню
-	// format- сведения о песне, самое главное, о ее частоте дискретизации
 	streamer, format, err := mp3.Decode(f)
 	if err != nil {
 		log.Fatal(err)
@@ -42,16 +36,4 @@ func Play() {
 		speaker.Unlock()
 	}
 
-	//speaker.Play(ctrl)
-
 }
-
-// ctrl := &beep.Ctrl{Streamer: beep.Loop(-1, streamer), Paused: false}
-// for {
-// 	fmt.Print("Press [ENTER] to pause/resume. ")
-// 	fmt.Scanln()
-
-// 	speaker.Lock()
-// 	ctrl.Paused = !ctrl.Paused
-// 	speaker.Unlock()
-// }

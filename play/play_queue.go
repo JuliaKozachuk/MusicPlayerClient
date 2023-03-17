@@ -48,7 +48,6 @@ func Start_queue() {
 				continue
 			}
 
-			// Decode it.
 			streamer, format, err := mp3.Decode(f)
 			if err != nil {
 				fmt.Println(err)
